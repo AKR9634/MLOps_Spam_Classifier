@@ -1,0 +1,23 @@
+columns:
+  v1 : category
+  v2 : str
+  "Unnamed: 2" : int
+  "Unnamed: 3" : int
+  "Unnamed: 4" : int
+
+categorical_columns:
+  - v1
+
+# for data tranformation
+rename_columns:
+  v1 : label
+  v2 : message
+
+drop_columns:
+  - "Unnamed: 2"
+  - "Unnamed: 3"
+  - "Unnamed: 4"
+
+num_features:
+  - v1
+  - v2
