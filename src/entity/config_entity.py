@@ -35,3 +35,9 @@ class ModelTrainerConfig:
     clf__C = 10
     _random_state = 43
     tfidf__ngram_range = (1, 2)
+
+@dataclass
+class ModelEvaluationConfig:
+    changed_threshold_score: float = 0.02
+    bucket_name: str =  ""
+    s3_model_key_path: str= "model.pkl"
