@@ -41,3 +41,8 @@ class ModelEvaluationConfig:
     changed_threshold_score: float = 0.02
     bucket_name: str =  ""
     s3_model_key_path: str= "model.pkl"
+
+@dataclass
+class ModelPusherConfig:
+    bucket_name : str = ""
+    s3_model_key_path : str = "model.pkl"
