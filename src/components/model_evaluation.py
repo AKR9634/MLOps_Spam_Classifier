@@ -8,7 +8,10 @@ import sys
 import pandas as pd
 from typing import Optional
 from src.entity.s3_estimator import Cloud_Saved_Model
+from src.utils import read_yaml_file
 from dataclasses import dataclass
+
+SCHEMA_PATH_FILE = "config/schema.yaml"
 
 @dataclass
 class EvaluateModelResponse:
@@ -26,6 +29,8 @@ class ModelEvaluation:
             self.model_eval_config = model_eval_config
             self.data_ingestion_artifact = data_ingestion_artifact
             self.model_trainer_artifact = model_trainer_artifact
+            self._schema_config = read_yaml_file(SCHEMA_PATH_FILE)
+
         except Exception as e:
             raise MyException(e, sys)
         

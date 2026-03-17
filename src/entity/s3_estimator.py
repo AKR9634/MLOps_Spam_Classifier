@@ -28,6 +28,8 @@ class Cloud_Saved_Model:
     
     def save_model(self, from_file, remove:bool = False) -> None:
         try:
+            print("from_file:", from_file)
+            print("type:", type(from_file))
             self.s3.upload_file(from_file, self.model_path, self.bucket_name, remove)
 
         except Exception as e:

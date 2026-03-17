@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam Classifier</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📧 Spam Message Classifier</h1>
+    <p>Enter a message and check if it is spam.</p>
+
+    <!-- Prediction Form -->
+    <form action="/" method="post">
+
+        <textarea 
+            name="Message"
+            placeholder="Enter your message here..."
+            required>
+        </textarea>
+
+        <button class="predict-btn" type="submit">
+            Predict Spam
+        </button>
+
+    </form>
+
+
+    <!-- Train Model Button -->
+    <div class="train-section">
+
+        <form action="/train" method="get">
+            <button class="train-btn" type="submit">
+                Train Model
+            </button>
+        </form>
+
+    </div>
+
+
+    <!-- Prediction Result -->
+    {% if context %}
+    <div class="result">
+        <h3>Prediction Result:</h3>
+        <p>{{ context }}</p>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

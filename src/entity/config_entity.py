@@ -39,10 +39,15 @@ class ModelTrainerConfig:
 @dataclass
 class ModelEvaluationConfig:
     changed_threshold_score: float = 0.02
-    bucket_name: str =  ""
+    bucket_name: str =  "akr-spam-model"
     s3_model_key_path: str= "model.pkl"
 
 @dataclass
 class ModelPusherConfig:
-    bucket_name : str = ""
+    bucket_name : str = "akr-spam-model"
     s3_model_key_path : str = "model.pkl"
+
+@dataclass
+class SpamClassifierConfig:
+    model_file_path: str = "model.pkl"
+    model_bucket_name: str = "akr-spam-model"
