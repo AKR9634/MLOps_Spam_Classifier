@@ -18,7 +18,7 @@ class SpamData:
     def get_spam_data_as_dict(self):
 
         try:
-            input_data = {"Message" : [self.message]}
+            input_data = {"message" : [self.message]}
             return input_data
         except Exception as e:
             raise MyException(e, sys)
