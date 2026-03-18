@@ -6,6 +6,8 @@ COPY . /app
 
 RUN pip install -r requirements.txt
 
+RUN python -m nltk.downloader stopwords
+
 EXPOSE 5000
 
 CMD ["python3", "app.py"]
