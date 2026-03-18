@@ -2,54 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Spam Classifier</title>
+    <title>Spam AI</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
 
-<div class="container">
+<!-- 🔥 HERO SECTION -->
+<section class="hero">
+    <h1>🚀 SpamAI</h1>
+    <p>Detect spam messages instantly using Machine Learning</p>
+    <a href="#app" class="cta-btn">Try Now ↓</a>
+</section>
 
-    <h1>📧 Spam Message Classifier</h1>
-    <p>Enter a message and check if it is spam.</p>
+<!-- 💡 FEATURES -->
+<section class="features">
+    <div class="feature-card">
+        <h3>⚡ Fast Prediction</h3>
+        <p>Get instant results in milliseconds</p>
+    </div>
 
-    <!-- Prediction Form -->
-    <form action="/" method="post">
+    <div class="feature-card">
+        <h3>🧠 ML Powered</h3>
+        <p>Advanced NLP models for accurate detection</p>
+    </div>
 
-        <textarea 
-            name="Message"
-            placeholder="Enter your message here..."
-            required>
-        </textarea>
+    <div class="feature-card">
+        <h3>🔄 Train Anytime</h3>
+        <p>Retrain model with one click</p>
+    </div>
+</section>
 
-        <button class="predict-btn" type="submit">
-            Predict Spam
-        </button>
+<!-- 🧪 MAIN APP -->
+<section class="app-section" id="app">
 
-    </form>
+    <div class="container">
 
+        <h2>📧 Try the Classifier</h2>
 
-    <!-- Train Model Button -->
-    <div class="train-section">
+        <!-- Prediction Form -->
+        <form action="/" method="post">
 
-        <form action="/train" method="get">
-            <button class="train-btn" type="submit">
-                Train Model
+            <textarea 
+                name="Message"
+                placeholder="Paste your message here..."
+                required>
+            </textarea>
+
+            <button class="predict-btn" type="submit">
+                🚀 Predict Spam
             </button>
+
         </form>
 
+        <!-- Train Button -->
+        <div class="train-section">
+            <form action="/train" method="get">
+                <button class="train-btn" type="submit">
+                    ⚙️ Train Model
+                </button>
+            </form>
+        </div>
+
+        <!-- Result -->
+        {% if context %}
+        <div class="result">
+            <h3>📊 Result</h3>
+            <p>{{ context }}</p>
+        </div>
+        {% endif %}
+
     </div>
 
+</section>
 
-    <!-- Prediction Result -->
-    {% if context %}
-    <div class="result">
-        <h3>Prediction Result:</h3>
-        <p>{{ context }}</p>
-    </div>
-    {% endif %}
-
-</div>
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 SpamAI | Built with ❤️</p>
+</footer>
 
 </body>
 </html>
